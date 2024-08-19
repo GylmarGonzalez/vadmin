@@ -1,4 +1,4 @@
-package com.vadmin.conf;
+package com.vadmin.conf.db;
 
 import javax.sql.DataSource;
 

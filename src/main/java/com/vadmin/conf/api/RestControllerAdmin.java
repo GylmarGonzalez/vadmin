@@ -1,4 +1,4 @@
-package com.vadmin.conf;
+package com.vadmin.conf.api;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
