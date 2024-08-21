@@ -11,8 +11,12 @@ import com.vadmin.service.general.IplataformasS;
 @Service
 public class PlataformasS  implements IplataformasS{
 	
+	private IplataformasRepo plataformasRepo;
+	
 	@Autowired
-	IplataformasRepo plataformasRepo;
+	public void setPlataformasRepo(IplataformasRepo plataformasRepo) {
+		this.plataformasRepo = plataformasRepo;
+	}
 
 	@Override
 	public Optional<Plataformas> findRecordById(Long id) {

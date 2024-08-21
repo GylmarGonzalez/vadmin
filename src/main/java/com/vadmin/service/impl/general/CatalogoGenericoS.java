@@ -13,8 +13,12 @@ import com.vadmin.service.general.IcatalogoGenericoS;
 @Service
 public class CatalogoGenericoS  implements IcatalogoGenericoS{
 	
+	private  IcatalogoGenericoRepo catalogoGenericoRepo;
+	
 	@Autowired
-	private IcatalogoGenericoRepo catalogoGenericoRepo;
+	public void setCatalogoGenericoRepo(IcatalogoGenericoRepo catalogoGenericoRepo) {
+		this.catalogoGenericoRepo = catalogoGenericoRepo;
+	}
 
 	@Override
 	public Optional<CatalogosGenericos> findRecordById(Long id) {

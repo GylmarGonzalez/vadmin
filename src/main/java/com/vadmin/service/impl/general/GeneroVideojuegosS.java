@@ -13,8 +13,12 @@ import com.vadmin.service.general.IgeneroVideojuegosS;
 @Service
 public class GeneroVideojuegosS implements IgeneroVideojuegosS{
 	
+	private IgeneroVideojuegosRepo generoVideojuegosRepo;
+
 	@Autowired
-	IgeneroVideojuegosRepo generoVideojuegosRepo;
+	public void setGeneroVideojuegosRepo(IgeneroVideojuegosRepo generoVideojuegosRepo) {
+		this.generoVideojuegosRepo = generoVideojuegosRepo;
+	}
 
 	@Override
 	public Optional<GeneroVideojuegos> findRecordById(Long id) {

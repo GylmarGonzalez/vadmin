@@ -11,9 +11,13 @@ import com.vadmin.service.general.IvideojuegosS;
 
 @Service
 public class VideojuegosS implements IvideojuegosS{
-	
+
+	private IvideojuegosRepo videojuegosRepo;
+
 	@Autowired
-	IvideojuegosRepo videojuegosRepo;
+	public void setVideojuegosRepo(IvideojuegosRepo videojuegosRepo) {
+		this.videojuegosRepo = videojuegosRepo;
+	}
 
 	@Override
 	public Optional<Videojuegos> findRecordById(Long id) {

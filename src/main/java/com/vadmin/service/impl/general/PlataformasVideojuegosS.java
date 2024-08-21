@@ -13,8 +13,12 @@ import com.vadmin.service.general.IplataformasVideojuegosS;
 @Service
 public class PlataformasVideojuegosS implements IplataformasVideojuegosS{
 	
+	private IplataformasVideojuegosRepo plataformasVideojuegosRepo;
+	
 	@Autowired
-	IplataformasVideojuegosRepo plataformasVideojuegosRepo;
+	public void setPlataformasVideojuegosRepo(IplataformasVideojuegosRepo plataformasVideojuegosRepo) {
+		this.plataformasVideojuegosRepo = plataformasVideojuegosRepo;
+	}
 
 	@Override
 	public Optional<PlataformasVideojuegos> findRecordById(Long id) {
