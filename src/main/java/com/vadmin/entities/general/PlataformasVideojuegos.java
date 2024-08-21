@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
@@ -18,11 +19,13 @@ public class PlataformasVideojuegos {
 	@Column(name = "id", nullable = false)
 	private Long id;
 	
-	@OneToOne
+    @OneToOne()
+    @JoinColumn(name = "fkVideojuegos", referencedColumnName = "id")
 	@NotNull(message = "fkVideojuegos no puede ser vacio")
 	private Videojuegos fkVideojuegos;
 	
 	@OneToOne
+    @JoinColumn(name = "fkPlataforma", referencedColumnName = "id")
 	@NotNull(message = "fkplataforma no puede ser vacio")
 	private Plataformas fkPlataforma;
 

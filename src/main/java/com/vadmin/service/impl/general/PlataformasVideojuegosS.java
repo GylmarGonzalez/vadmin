@@ -31,13 +31,13 @@ public class PlataformasVideojuegosS implements IplataformasVideojuegosS{
 	}
 
 	@Override
-	public Long save(PlataformasVideojuegos entidad) {
-		return plataformasVideojuegosRepo.save(entidad).getId();
+	public PlataformasVideojuegos save(PlataformasVideojuegos entidad) {
+		 return plataformasVideojuegosRepo.save(entidad);
 	}
 
 	@Override
-	public void delete(PlataformasVideojuegos entidad) {
-		plataformasVideojuegosRepo.delete(entidad);
+	public void delete(Long id) {
+		plataformasVideojuegosRepo.deleteById(id);
 	}
 
 }
