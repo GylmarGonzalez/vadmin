@@ -34,8 +34,8 @@ public class PlataformasS  implements IplataformasS{
 	}
 
 	@Override
-	public void delete(Plataformas entidad) {
-		plataformasRepo.delete(entidad);
+	public void delete(Long id) {
+		plataformasRepo.deleteById(id);
 	}
 
 

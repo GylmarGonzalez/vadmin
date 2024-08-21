@@ -36,8 +36,6 @@ import jakarta.validation.Valid;
 public class CatalogosGenericosC {
 	
 	private IcatalogoGenericoS catalogoGenericoS;
-	
-
     private ModelMapper mapper;
 
 	@Autowired
@@ -51,7 +49,7 @@ public class CatalogosGenericosC {
 	}
 
 
-    @PostMapping("/catalogo-generico")
+    @PostMapping("/catalogos-genericos")
 	public ResponseEntity<Object> save(@Valid @RequestBody CatalogosGenericosRequest request,BindingResult bindingResult, HttpServletRequest req) {
 		if (bindingResult.hasErrors()) {
 			return new ResponseEntity<>("Error Validacion", HttpStatus.BAD_REQUEST);
@@ -62,7 +60,7 @@ public class CatalogosGenericosC {
 		return ResponseEntity.created(location).build();
 	}
     
-	@GetMapping(value = "/catalogo-generico/{id}")
+	@GetMapping(value = "/catalogos-genericos/{id}")
 	public EntityModel<CatalogosGenericosResponse> findRecordById(@PathVariable Long id) throws NotFoundException {
 		Optional<CatalogosGenericos> optional = catalogoGenericoS.findRecordById(id);
 		
@@ -77,7 +75,7 @@ public class CatalogosGenericosC {
 		 return EntityModel.of(response);
 	}
 	
-	@GetMapping(value = "/catalogo-generico")
+	@GetMapping(value = "/catalogos-genericos")
 	public ResponseEntity<List<CatalogosGenericosResponse>> findAll() throws NotFoundException {
 		List<CatalogosGenericos> findAll = catalogoGenericoS.findAll();
 		Type listType = new TypeToken<List<CatalogosGenericosResponse>>(){}.getType();
@@ -90,7 +88,7 @@ public class CatalogosGenericosC {
 		return new ResponseEntity<>(toResponse, HttpStatus.OK);
 	}
 	
-	@PutMapping("/catalogo-generico")
+	@PutMapping("/catalogos-genericos")
 	public ResponseEntity<Object> update(@RequestBody CatalogosGenericosRequest request) {
 		CatalogosGenericos entidad = mapper.map(request, CatalogosGenericos.class);
 		catalogoGenericoS.save(entidad);
@@ -101,8 +99,8 @@ public class CatalogosGenericosC {
 		return new ResponseEntity<>(response,HttpStatus.OK);
 	}
 	
-	@DeleteMapping(value = "/catalogo-generico/{id}") 
-	public ResponseEntity<?> delete(@PathVariable Long id) {
+	@DeleteMapping(value = "/catalogos-genericos/{id}") 
+	public ResponseEntity<Object> delete(@PathVariable Long id) {
 		catalogoGenericoS.delete(id);
 		return ResponseEntity.noContent().build();
 	}

@@ -10,6 +10,6 @@ public interface IplataformasS {
 	Optional<Plataformas> findRecordById(Long id);
 	List<Plataformas> findAll();
 	Long save(Plataformas entidad);
-	void delete(Plataformas entidad);
+	void delete(Long id);
 
 }

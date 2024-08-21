@@ -6,7 +6,7 @@ public class CatalogosGenericosRequest {
 	
 	private Long id;
 	
-	@Size(min = 1, max = 10, message = "El campo tipo tiene un tama�o maximo de 10 caracteres")
+	@Size(min = 1, max = 30, message = "El campo tipo tiene un tama�o maximo de 30 caracteres")
 	private String tipo;
 	
 	@Size(min = 1, max = 10, message = "El campo codigo tiene un tama�o maximo de 10 caracteres")

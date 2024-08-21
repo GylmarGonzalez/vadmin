@@ -17,8 +17,8 @@ public class CatalogosGenericos {
 	@Column(name = "id", nullable = false)
 	private Long id;
 	
-	@Column(name = "tipo", length = 10, nullable = false)
-	@Size(min = 1, max = 10, message = "El campo tipo tiene un tama�o maximo de 10 caracteres")
+	@Column(name = "tipo", length = 30, nullable = false)
+	@Size(min = 1, max = 30, message = "El campo tipo tiene un tama�o maximo de 30 caracteres")
 	private String tipo;
 	
 	@Column(name = "codigo", length = 10, nullable = false)
