@@ -36,8 +36,8 @@ public class CatalogoGenericoS  implements IcatalogoGenericoS{
 	}
 
 	@Override
-	public void delete(CatalogosGenericos entidad) {
-		catalogoGenericoRepo.delete(entidad);
+	public void delete(Long id) {
+		catalogoGenericoRepo.deleteById(id);
 	}
 
 }

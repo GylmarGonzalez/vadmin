@@ -10,6 +10,6 @@ public interface IcatalogoGenericoS {
 	Optional<CatalogosGenericos> findRecordById(Long id);
 	List<CatalogosGenericos> findAll();
 	Long save(CatalogosGenericos entidad);
-	void delete(CatalogosGenericos entidad);
+	void delete(Long id);
 	
 }

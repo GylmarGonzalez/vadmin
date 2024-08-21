@@ -17,6 +17,11 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 	       return new ResponseEntity<>(apiError, apiError.getStatus());
 	   }
 	   
+		@ExceptionHandler(NotFoundException.class)
+		public final ResponseEntity<Object> manejarModeloExcepciones(NotFoundException ex,WebRequest request){
+			 return buildResponseEntity(new ApiError(HttpStatus.NOT_FOUND,ex.getLocalizedMessage(), internalServerError));
+		}
+	   
 		@ExceptionHandler(Exception.class)
 		public final ResponseEntity<Object> handleAllExceptions(Exception exception, WebRequest request) throws Exception {
 			 return buildResponseEntity(new ApiError(HttpStatus.INTERNAL_SERVER_ERROR,exception.getLocalizedMessage(), internalServerError));
