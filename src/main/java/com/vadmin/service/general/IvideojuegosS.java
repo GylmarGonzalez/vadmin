@@ -10,6 +10,6 @@ public interface IvideojuegosS {
 	Optional<Videojuegos> findRecordById(Long id);
 	List<Videojuegos> findAll();
 	Long save(Videojuegos entidad);
-	void delete(Videojuegos entidad);
+	void delete(Long id);
 
 }

@@ -35,8 +35,8 @@ public class VideojuegosS implements IvideojuegosS{
 	}
 
 	@Override
-	public void delete(Videojuegos entidad) {
-		videojuegosRepo.delete(entidad);
+	public void delete(Long id) {
+		videojuegosRepo.deleteById(id);
 	}
 
 }
