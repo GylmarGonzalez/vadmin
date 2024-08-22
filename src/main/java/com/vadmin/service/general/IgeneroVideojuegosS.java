@@ -9,7 +9,7 @@ public interface IgeneroVideojuegosS {
 	
 	Optional<GeneroVideojuegos> findRecordById(Long id);
 	List<GeneroVideojuegos> findAll();
-	Long save(GeneroVideojuegos entidad);
-	void delete(GeneroVideojuegos entidad);
+	GeneroVideojuegos save(GeneroVideojuegos entidad);
+	void delete(Long id);
 
 }

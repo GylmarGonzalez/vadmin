@@ -2,13 +2,11 @@ package com.vadmin.response.general;
 
 import org.springframework.hateoas.RepresentationModel;
 
-import com.vadmin.request.general.PlataformasRequest;
-import com.vadmin.request.general.VideojuegosRequest;
 
 public class PlataformasVideojuegosResponse extends RepresentationModel<PlataformasVideojuegosResponse>{
 	
 	private Long id;
-	private  VideojuegosResponse fkVideojuegos;
+	private VideojuegosResponse fkVideojuegos;
 	private PlataformasResponse fkPlataforma;
 
 	public Long getId() {
@@ -32,6 +30,14 @@ public class PlataformasVideojuegosResponse extends RepresentationModel<Platafor
 	}
 
 	public void setFkPlataforma(PlataformasResponse fkPlataforma) {
+		this.fkPlataforma = fkPlataforma;
+	}
+
+	public PlataformasVideojuegosResponse(Long id, VideojuegosResponse fkVideojuegos,
+			PlataformasResponse fkPlataforma) {
+		super();
+		this.id = id;
+		this.fkVideojuegos = fkVideojuegos;
 		this.fkPlataforma = fkPlataforma;
 	}
 

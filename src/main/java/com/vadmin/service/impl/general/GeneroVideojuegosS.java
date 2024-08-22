@@ -31,13 +31,13 @@ public class GeneroVideojuegosS implements IgeneroVideojuegosS{
 	}
 
 	@Override
-	public Long save(GeneroVideojuegos entidad) {
-		return generoVideojuegosRepo.save(entidad).getId();
+	public GeneroVideojuegos save(GeneroVideojuegos entidad) {
+		return generoVideojuegosRepo.save(entidad);
 	}
 
 	@Override
-	public void delete(GeneroVideojuegos entidad) {
-		generoVideojuegosRepo.delete(entidad);
+	public void delete(Long id) {
+		generoVideojuegosRepo.deleteById(id);
 	}
 
 }
